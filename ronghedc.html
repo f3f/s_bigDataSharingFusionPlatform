@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+
+<html>
+<head lang="en">
+<!-- Meta -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<title>大数据共享融合平台</title>
+
+<!-- CSS Global Compulsory-->
+	<link rel="stylesheet" href="./newPageStyle/lib/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="./newPageStyle/lib/css/animate.css" />
+	<link rel="stylesheet" href="./newPageStyle/lib/css/reset.css" />
+<link rel="stylesheet" href="./newPageStyle/lib/css/dataProducts.css" />
+<link rel="stylesheet" href="./newPageStyle/lib/css/platform.css" />
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+	<script src="./jqueryResource/js/jquery.min.js"></script>
+</head>
+<body class="platform-bg">
+
+<div>
+	<script src="./jqueryResource/js/jquery.js"></script>
+	<script src="./jqueryResource/js/jquery.json.js"></script>
+	<script src="./jqueryResource/js/layer.js"></script>
+	<script src="./jqueryResource/js/sea.js"></script>
+	<script src="./jqueryResource/js/seajsConfig.js"></script>
+	<script src="./jqueryResource/js/index.js"></script>
+	<script src="./jqueryResource/js/jquery-ui.min.js"></script>
+	<script src="./jqueryResource/js/jquery.ztree.all.min.js"></script>
+	<script src="./jqueryResource/js/bootstrap.min.js"></script>
+	<script src="./jqueryResource/js/jquery.twbsPagination.min.js"></script>
+	<script src="./jqueryResource/js/jquery-ui.js"></script>
+	<script src="./jqueryResource/js/catalog_menu_change.js"></script>
+	<script src="./jqueryResource/js/base.js"></script>
+</div>
+
+<div class="header"></div>
+<div>
+ 
+    <div class="header">
+        <a class="header-left-box fl" href="./login.html">
+            <!-- <img src="/newPageCatalog/imgs/logo.png" class="logo fl"/> -->
+            <h1 class="fl">大数据共享融合平台</h1>
+		</a>
+		<div class="header-right-box fr">
+			<ul class="operation-box">
+<!-- 				<li class="login-link"><a href="javascript:;" class="login-li-title"><p>
+							<i class="icons icon-login"></i><span>登录</span>
+						</p></a>
+					<div class="login-box">
+						<i class="login-box-arrow"></i>
+						<div class="info-box">
+							<h4 class="title">会员登录</h4>
+							<p>
+								<input type="text" placeholder="邮箱" class="fl loginName" />
+							</p>
+							<p>
+								<input type="password" placeholder="密码" class="fl loginPwd" />
+							</p>
+							<p class="pr">
+								<input type="text" placeholder="验证码" class="fl validateCode" /><span class="fr validateImg"><img
+									src="/newPageStylenewPageCatalogteImg.png" class="fl" /></span>
+							</p>
+							<label class="prompt-txt">提示文字</label>
+							<button type="button" class="fl loginBtn">登 录</button>
+						</div>
+					</div>
+				</li> -->
+				
+				<li class="login-link userCenter">
+					<a href="javascript:;" class="login-li-title"><p>
+							<i class="icons icon-login"></i><span>用户中心</span>
+						</p></a>
+					<div class="login-box">
+						<i class="login-box-arrow"></i>
+						<div class="info-box">
+							<div class="usercenter-info">
+								<p>
+									<i class="icons usericons1 fl"></i> <span id="showname" class="fl">用户名称：Aaron</span>
+								</p>
+								<p>
+									<i class="icons usericons2 fl"></i> <span id="showorg" class="fl">用户单位：国税局</span>
+								</p>
+								<p>
+									<i class="icons usericons3 fl"></i> <span id="showtime" class="fl">登陆时间：2017-03-30</span>
+								</p>
+							</div>
+							<button type="button" class="fl loginBtn">
+								<span class="fl" onclick="">系统管理</span><i class="icons usericons4 fl"></i>
+							</button>
+						</div>
+					</div>
+				</li>
+	
+                <li><a href="javascript:;" class="login-li-title"><i class="icons icon-applyfor"></i><span>申请试用</span></a></li>
+                <li><a href="javascript:;" class="login-li-title"><i class="icons icon-contact"></i><span>联系我们</span></a></li>
+                <!--<li><a href="javascript:;"><i class="icons icon-exit"></i><span>退出</span></a></li>-->
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- 从session中获取值 -->
+<input type="hidden" id="uname" />
+<input type="hidden" id="mygov" />
+<input type="hidden" id="myloginTime" />
+<script>
+    var uname = 'root'; 
+    var mygov = '\u5434\u4E2D\u533A'; 
+    var myloginTime = '16:51:23'; 
+    $("#uname").val(uname);
+    $("#mygov").val(mygov);
+    $("#myloginTime").val(myloginTime);
+</script>
+	
+	<div class="content-box dataproducts-box">
+		<div class="fl leftMenu-box"></div>
+		<div>
+	<ul class="left-menu-box">
+		<li><a href="./login.html"><i class="menuicons menuicons-left1"></i><span class="menuspan">首页</span></a></li>
+		<li><a href="./ronghedc.html"><i class="menuicons menuicons-left2"></i><span class="menuspan">共享交换</span></a></li>
+		<li><a href="javascript:;"><i class="menuicons menuicons-left3"></i><span class="menuspan">数据采集</span></a></li>
+		<li><a href="./rongherc.html"><i class="menuicons menuicons-left4"></i><span class="menuspan">资源目录</span></a></li>
+		<li><a href="javascript:;"><i class="menuicons menuicons-left5"></i><span class="menuspan">数据标准化</span></a></li>
+		<li><a href="./dataClean.html"><i class="menuicons menuicons-left6"></i><span class="menuspan">数据清洗</span></a></li>
+		<li><a href="./dataFuse/index.html"><i class="menuicons menuicons-left7"></i><span class="menuspan">数据融合</span></a></li>
+		<li><a href="javascript:;"><i class="menuicons menuicons-left8"></i><span class="menuspan">数据建模分析</span></a></li>
+		<li><a href="./serviceGovernance.html"><i class="menuicons menuicons-left9"></i><span class="menuspan">服务治理</span></a></li>
+		<li><a href="./dataProducts.html"><i class="menuicons menuicons-left10"></i><span class="menuspan">数据产品</span></a></li>
+	</ul>
+</div>
+		
+		<div class="fr content-right-box pr">
+			<div class="fl arrow-box">
+				<a href="javascript:;" class="arrow-left"><i class="icons icon-arrow-left-blue"></i></a>
+			</div>
+			<div class="fr arrow-box">
+				<a href="javascript:;" class="arrow-right"><i class="icons icon-arrow-right-blue"></i></a>
+			</div>
+			<div class="fl content-main-box">
+				<div class="chart-box clearfix mb55">
+					<div class="fl chart-box-left">
+						<div class="chart-title">
+							<div class="fl chart-title-left">
+								<i class="fl"></i>
+								<h2 class="fl">转换调用情况</h2>
+							</div>
+							<a class="fr chart-title-right"> 
+							<i class="icons2 add-icons-red fl"></i> 
+							<!--<span class="fl" onclick="location.href='/dataCenter/datacenterTransf/list'">新增转换</span> -->
+								<span class="fl" onclick="">新增转换</span>
+
+								<i class="icons2 bg-top"></i>
+							<i class="icons2 bg-bottom"></i>
+							</a>
+						</div>
+						<div class="chart-content">
+							<div id="pie" style="height: 330px; width: 100%;"></div>
+							<!--<img src="chart/platform1.jpg" width="100%" height="265" />-->
+						</div>
+					</div>
+					
+					<div class="fr chart-box-right">
+						<div class="chart-title">
+							<div class="fl chart-title-left">
+								<i class="fl"></i>
+								<h2 class="fl">任务执行情况</h2>
+							</div>
+							<a class="fr chart-title-right"> <i class="icons2 add-icons-red fl"></i> 
+							<span class="fl" onclick="">新增转换</span> <i class="icons2 bg-top"></i> <i class="icons2 bg-bottom"></i>
+							</a>
+						</div>
+						<div class="chart-content clearfix">
+							<div id="bar" style="height: 330px; width: 100%;"></div>
+							<!--<img src="chart/platform2.jpg" width="523" height="287" />-->
+						</div>
+					</div>
+				</div>
+				
+				<div class="list-box clearfix">
+					<div class="fl chart-title-left clearfix mb40">
+						<i class="fl"></i>
+						<h2 class="fl">实时转换日志</h2>
+					</div>
+					<!-- 日志滚动图 -->
+					<marquee direction="up" behavior="scroll" onmouseover="stop()" scrolldelay="500" onmouseout="start()">
+						<div id="resourceForeplacedview" class="list-content"></div>
+					</marquee>
+				</div>
+
+			</div>
+			<div class="fl content-main-box" style="display: none;">
+				<div class="chart-title">
+					<div class="fl chart-title-left">
+						<i class="fl"></i>
+						<h2 class="fl">前置机状态</h2>
+					</div>
+					<div class="fr chart-title-right pr">
+						<a class="fl"> <i onclick="location.href='/dataCenter/resourcePreManage'" class="icons2 add-icons-red fl"></i> 
+						<span class="fl" onclick="location.href='/dataCenter/resourcePreManage'">新增节点</span>
+						</a> <i class="icons2 bg-top"></i> <i class="icons2 bg-bottom"></i>
+					</div>
+				</div>
+				<div class="chart-box">
+					<!-- 需求供需排行榜图表 -->
+					<!--<img src="chart/zyml4.jpg" width="100%" height="350"/>-->
+					<div id="datacenter" style="width: 1134px; height: 730px; margin: 0 auto;"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="./jqueryResource/js/public.js"></script>
+	<script src="./jqueryResource/js/echarts.min.js"></script>
+	
+	<!-- 前置机状态图表所需文件 -->
+	<script src="./jqueryResource/js/d3.js"></script>
+	<script src="./jqueryResource/js/forceGuidanceChart.min.js"></script>
+	<script src="./jqueryResource/js/switchChart.js"></script>
+	
+	<!-- platform页面js -->
+	<script src="./jqueryResource/js/platform.js"></script>
+
+	<script>
+		$(function() {
+	    	//用户中心
+	    	var username =  $("#uname").val();
+	    	var mygov2 =  $("#mygov").val();
+	    	var myloginTime2 =  $("#myloginTime").val();
+	    	console.info("username  "+ username);
+	    	
+	        $("#showname").text("用户名称："+username);
+	        $("#showorg").text("用户单位："+mygov2);
+	        $("#showtime").text("登录时间："+myloginTime2);
+	    		    
+			//饼图
+			GiveParam1();
+			//柱状图
+			GiveParam2();
+			//实时转换日志
+			GiveParam();
+
+			/* 前置机状态图表初始化 */
+			setTimeout('GiveParamindexfirst(1)', 500);
+
+			$('.arrow-box').click(function(event) {
+				$('.content-main-box').toggle();
+// 				var myChartPie = echarts.init(document.getElementById('pie'));
+// 				myChartPie.setOption(option1);
+
+// 				var myChartBar = echarts.init(document.getElementById('bar'));
+// 				myChartBar.setOption(option2);
+			//饼图
+			GiveParam1();
+			//柱状图
+			GiveParam2();
+			//实时转换日志
+			GiveParam();
+
+				/* 前置机状态图表初始化 */
+				GiveParamindexfirst(1);
+
+			});
+		});
+	</script>
+</body>
+</html>

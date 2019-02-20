@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+
+<html>
+<head lang="en">
+    <!-- Meta -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <title>大数据共享融合平台</title>
+    <!-- CSS Global Compulsory-->
+   <link rel="stylesheet" href="./newPageStyle/lib/css/bootstrap.min.css" />
+   <link rel="stylesheet" href="./newPageStyle/lib/css/animate.css" />
+   <link rel="stylesheet" href="./newPageStyle/lib/css/reset.css" />
+    
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+   <script src="./jqueryResource/js/jquery.min.js"></script>
+</head>
+<body class="rd-bg">
+
+<div>
+   <script src="./jqueryResource/js/jquery.js"></script>
+   <script src="./jqueryResource/js/jquery.json.js"></script>
+   <script src="./jqueryResource/js/layer.js"></script>
+   <script src="./jqueryResource/js/sea.js"></script>
+   <script src="./jqueryResource/js/seajsConfig.js"></script>
+   <script src="./jqueryResource/js/index.js"></script>
+   <script src="./jqueryResource/js/jquery-ui.min.js"></script>
+   <script src="./jqueryResource/js/jquery.ztree.all.min.js"></script>
+   <script src="./jqueryResource/js/bootstrap.min.js"></script>
+   <script src="./jqueryResource/js/jquery.twbsPagination.min.js"></script>
+   <script src="./jqueryResource/js/jquery-ui.js"></script>
+   <script src="./jqueryResource/js/catalog_menu_change.js"></script>
+   <script src="./jqueryResource/js/base.js"></script>
+</div>
+
+<div class="header"></div>
+<div>
+
+	<div class="header">
+		<a class="header-left-box fl" href="./login.html">
+		<!-- <img src="/newPageCatalog/imgs/logo.png" class="logo fl" /> -->
+			<h1 class="fl">大数据共享融合平台</h1>
+		</a>
+		<div class="header-right-box fr">
+			<ul class="operation-box">
+<!-- 				<li class="login-link"><a href="javascript:;" class="login-li-title"><p>
+							<i class="icons icon-login"></i><span>登录</span>
+						</p></a>
+					<div class="login-box">
+						<i class="login-box-arrow"></i>
+						<div class="info-box">
+							<h4 class="title">会员登录</h4>
+							<p>
+								<input type="text" placeholder="邮箱" class="fl loginName" />
+							</p>
+							<p>
+								<input type="password" placeholder="密码" class="fl loginPwd" />
+							</p>
+							<p class="pr">
+								<input type="text" placeholder="验证码" class="fl validateCode" /><span class="fr validateImg"><img
+									src="/newPageStylenewPageCatalogteImg.png" class="fl" /></span>
+							</p>
+							<label class="prompt-txt">提示文字</label>
+							<button type="button" class="fl loginBtn">登 录</button>
+						</div>
+					</div>
+				</li> -->
+				
+				<li class="login-link userCenter">
+					<a href="javascript:;" class="login-li-title"><p>
+							<i class="icons icon-login"></i><span>用户中心</span>
+						</p></a>
+					<div class="login-box">
+						<i class="login-box-arrow"></i>
+						<div class="info-box">
+							<div class="usercenter-info">
+								<p>
+									<i class="icons usericons1 fl"></i> <span id="showname" class="fl">用户名称：Aaron</span>
+								</p>
+								<p>
+									<i class="icons usericons2 fl"></i> <span id="showorg" class="fl">用户单位：国税局</span>
+								</p>
+								<p>
+									<i class="icons usericons3 fl"></i> <span id="showtime" class="fl">登陆时间：2017-03-30</span>
+								</p>
+							</div>
+							<button type="button" class="fl loginBtn">
+								<span class="fl" onclick="">系统管理</span><i class="icons usericons4 fl"></i>
+							</button>
+						</div>
+					</div>
+				</li>
+				
+				<li><a href="javascript:;" class="login-li-title"><i class="icons icon-applyfor"></i><span>申请试用</span></a></li>
+				<li><a href="javascript:;" class="login-li-title"><i class="icons icon-contact"></i><span>联系我们</span></a></li>
+				<!--<li><a href="javascript:;"><i class="icons icon-exit"></i><span>退出</span></a></li>-->
+			</ul>
+		</div>
+	</div>
+</div>
+
+<!-- 从session中获取值 -->
+<input type="hidden" id="uname" />
+<input type="hidden" id="mygov" />
+<input type="hidden" id="myloginTime" />
+<script>
+    var uname = 'root'; 
+    var mygov = '\u5434\u4E2D\u533A'; 
+    var myloginTime = '16:51:23'; 
+    $("#uname").val(uname);
+    $("#mygov").val(mygov);
+    $("#myloginTime").val(myloginTime);
+</script>
+
+<div class="content-box">
+    <div class="fl leftMenu-box"></div>
+    <div>
+	<ul class="left-menu-box">
+     <li><a href="./login.html"><i class="menuicons menuicons-left1"></i><span class="menuspan">首页</span></a></li>
+     <li><a href="./ronghedc.html"><i class="menuicons menuicons-left2"></i><span class="menuspan">共享交换</span></a></li>
+     <li><a href="javascript:;"><i class="menuicons menuicons-left3"></i><span class="menuspan">数据采集</span></a></li>
+     <li><a href="./rongherc.html"><i class="menuicons menuicons-left4"></i><span class="menuspan">资源目录</span></a></li>
+     <li><a href="javascript:;"><i class="menuicons menuicons-left5"></i><span class="menuspan">数据标准化</span></a></li>
+     <li><a href="./dataClean.html"><i class="menuicons menuicons-left6"></i><span class="menuspan">数据清洗</span></a></li>
+     <li><a href="./dataFuse/index.html"><i class="menuicons menuicons-left7"></i><span class="menuspan">数据融合</span></a></li>
+     <li><a href="javascript:;"><i class="menuicons menuicons-left8"></i><span class="menuspan">数据建模分析</span></a></li>
+     <li><a href="./serviceGovernance.html"><i class="menuicons menuicons-left9"></i><span class="menuspan">服务治理</span></a></li>
+     <li><a href="./dataProducts.html"><i class="menuicons menuicons-left10"></i><span class="menuspan">数据产品</span></a></li>
+	</ul>
+</div>
+    <div class="fr content-right-box pr">
+        <div class="fl arrow-box"><a href="javascript:;" class="arrow-left"><i class="icons icon-arrow-left-blue"></i></a></div>
+        <div class="fr arrow-box"><a href="javascript:;" class="arrow-right"><i class="icons icon-arrow-right-blue"></i></a></div>
+        <div class="content-main-box">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="clearfix chart-title">
+                        <div class="fl chart-title-left">
+                            <i class="fl"></i>
+                            <h2 class="fl">目录概览</h2>
+                        </div>
+                        <div class="fr chart-title-right-long pr">
+                            <a class="fl chart-title-right">
+                                <i class="icons2 add-icons-red fl"></i>
+                                <!--<span class="fl" onclick="location.href='/catalog/basic/getAllCatalogBasic'">新增编目</span>-->
+                               <span class="fl" onclick="">新增编目</span>
+                            </a>
+                            <a class="fl chart-title-right bl-line">
+                                <span class="fl" onclick="">我订阅的目录</span>
+                            </a>
+                            <i class="icons2 bg-top-long"></i>
+                            <i class="icons2 bg-bottom-long"></i>
+                        </div>
+                    </div>
+                    <div class="chart-box">
+                        <!-- 目录概览图表 -->
+                        <!--<img src="chart/rd1.jpg" width="630" height="330"/>-->
+                        <div id="bar5" style="width:100%;height: 330px;"></div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="clearfix chart-title">
+                        <div class="fl chart-title-left">
+                            <i class="fl"></i>
+                            <h2 class="fl">需求概览</h2>
+                        </div>
+                        <div class="fr chart-title-right-long pr">
+                            <a class="fl chart-title-right">
+                                <i class="icons2 add-icons-red fl"></i>
+                                <span class="fl" onclick="">新增需求</span>
+                            </a>
+                            <a class="fl chart-title-right bl-line">
+                                <span class="fl" onclick="">我提出的需求</span>
+                            </a>
+                            <i class="icons2 bg-top-long"></i>
+                            <i class="icons2 bg-bottom-long"></i>
+                        </div>
+                    </div>
+                    <div class="chart-box">
+                        <!-- 需求概览图表 -->
+                        <!--<img src="chart/rd2.jpg" width="630" height="330"/>-->
+                        <div id="bar6" style="width:100%;height: 330px;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="clearfix chart-title-left">
+                        <i class="fl"></i>
+                        <h2 class="fl">待办目录</h2>
+                    </div>
+                    <div class="chart-box">
+                        <!-- 待办目录图表 -->
+                        <!--<img src="chart/rd3.jpg" width="630" height="350"/>-->
+                        <div id="bar7" style="width:100%;height: 350px;"></div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="clearfix chart-title-left">
+                        <i class="fl"></i>
+                        <h2 class="fl">待办需求</h2>
+                    </div>
+                    <div class="chart-box">
+                        <!-- 待办需求图表 -->
+                        <!--<img src="chart/rd4.jpg" width="630" height="350"/>-->
+                        <div id="bar8" style="width:100%;height: 350px;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content-main-box" style="display: none;">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="clearfix chart-title">
+                        <div class="fl chart-title-left">
+                            <i class="fl"></i>
+                            <h2 class="fl">目录供需统计</h2>
+                        </div>
+                    </div>
+                    <div class="chart-box">
+                        <!-- 目录供需统计图表 -->
+                        <!--<img src="chart/zyml1.jpg" width="100%" height="350"/>-->
+                        <div id="bar3" style="width:500px;height: 350px;"></div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="clearfix chart-title-left">
+                        <i class="fl"></i>
+                        <h2 class="fl">需求供需统计</h2>
+                    </div>
+                    <div class="chart-box">
+                        <!-- 需求供需统计图表 -->
+                        <!--<img src="chart/zyml1.jpg" width="100%" height="350"/>-->
+                        <div id="bar4" style="width:500px;height: 350px;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="clearfix chart-title">
+                        <div class="fl chart-title-left">
+                            <i class="fl"></i>
+                            <h2 class="fl">目录供需排行榜</h2>
+                        </div>
+                        <div class="fr">
+                            <div class="fl radio-box">
+                                <input type="radio" id="directory1" name="directory" class="regular-radio" checked="checked" />
+                                <label for="directory1"><i class="fl"></i><span class="fl">按我订阅的目录数量排</span></label>
+                            </div>
+                            <div class="fl radio-box">
+                                <input type="radio" id="directory2" name="directory" class="regular-radio" />
+                                <label for="directory2"><i class="fl"></i><span class="fl">按委办局目录总量排</span></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chart-box">
+                        <!-- 目录供需排行榜图表 -->
+                        <!--<img src="chart/zyml3.jpg" width="100%" height="350"/>-->
+                        <div id="bar1" style="width:100%;height: 350px;"></div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="clearfix chart-title">
+                        <div class="fl chart-title-left">
+                            <i class="fl"></i>
+                            <h2 class="fl">需求供需排行榜</h2>
+                        </div>
+                        <div class="fr">
+                            <div class="fl radio-box">
+                                <input type="radio" id="demand1" name="demand" class="regular-radio" checked="checked" />
+                                <label for="demand1"><i class="fl"></i><span class="fl">按我提出的需求数量排</span></label>
+                            </div>
+                            <div class="fl radio-box">
+                                <input type="radio" id="demand2" name="demand" class="regular-radio" />
+                                <label for="demand2"><i class="fl"></i><span class="fl">按委办局匹配的需求排</span></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chart-box">
+                        <!-- 需求供需排行榜图表 -->
+                        <!--<img src="chart/zyml4.jpg" width="100%" height="350"/>-->
+                        <div id="bar2" style="width:100%;height: 350px;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="./jqueryResource/js/public.js"></script>
+<script src="./jqueryResource/js/echarts.min.js"></script>
+<script src="./jqueryResource/js/echarts-liquidfill.min.js"></script>
+<script src="./jqueryResource/js/resourceDirectory.js"></script>
+<script>
+    $(function(){
+    	//用户中心
+    	var username =  $("#uname").val();
+    	var mygov2 =  $("#mygov").val();
+    	var myloginTime2 =  $("#myloginTime").val();
+    	console.info("username  "+ username);
+    	
+        $("#showname").text("用户名称："+username);
+        $("#showorg").text("用户单位："+mygov2);
+        $("#showtime").text("登录时间："+myloginTime2);
+    		
+    	
+    	//目录排行
+    	GiveParam1();
+    	//需求排行
+    	GiveParam2();
+    	//供需关系
+    	GiveParam3();
+    	//需求供需
+    	GiveParam4();
+    	//目录概览
+    	GiveParam5();
+    	//需求概览
+    	GiveParam6();
+    	//待办目录
+    	GiveParam7();
+    	//待办需求
+    	GiveParam8();
+    	
+        $('.arrow-box').click(function(event) {
+            $('.content-main-box').toggle();
+            var myChartPie = echarts.init(document.getElementById('bar1'));
+            myChartPie.setOption(optiona1);
+
+            var myChartBar = echarts.init(document.getElementById('bar2'));
+            myChartBar.setOption(optiona2);
+
+            var myChart3 = echarts.init(document.getElementById('bar3'));
+            myChart3.setOption(optiona3);
+
+            var myChart4 = echarts.init(document.getElementById('bar4'));
+            myChart4.setOption(optiona4);
+
+            var myChart5 = echarts.init(document.getElementById('bar5'));
+            myChart5.setOption(optiona5);
+
+            var myChart6 = echarts.init(document.getElementById('bar6'));
+            myChart6.setOption(optiona6);
+
+            var myChart7 = echarts.init(document.getElementById('bar7'));
+            myChart7.setOption(optiona7);
+
+            var myChart8 = echarts.init(document.getElementById('bar8'));
+            myChart8.setOption(optiona8);
+
+        });
+    });
+</script>
+
+</body>
+</html>

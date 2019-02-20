@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+
+<html>
+<head lang="en">
+    <!-- Meta -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <title>大数据共享融合平台</title>
+    <!-- CSS Global Compulsory-->
+    <link rel="stylesheet" href="./fusion/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./fusion/css/animate.css" />
+    <link rel="stylesheet" href="./fusion/css/reset.css" />
+    <link rel="stylesheet" href="./fusion/css/dataClean.css" />
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond./fusion/js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+    <script src="./fusion/js/jquery.min.js"></script>
+</head>
+<body class="dataClean-bg">
+
+	<div class="header">
+	<div>
+
+
+	<div class="header">
+		<a class="header-left-box fl" href="./login.html"> <!-- <img src="/styleResource/img/homeImg/imgs/logo.png" class="logo fl" /> -->
+			<h1 class="fl">大数据共享融合平台</h1>
+		</a>
+		<div class="header-right-box fr">
+			<ul class="operation-box">
+				<li class="login-link loginBox"><a href="javascript:;" class="login-li-title"><p>
+							<i class="icons icon-login"></i><span>登录</span>
+						</p></a>
+					<div class="login-box">
+						<i class="login-box-arrow"></i>
+						<div class="info-box">
+							<form method="post" id="loginform" class="loginCon">
+								<h4 class="title">会员登录</h4>
+								<p>
+									<input name="username" id="username" type="text" placeholder="用户名" class="fl loginName" />
+								</p>
+								<p>
+									<input name="password" id="password" type="password" placeholder="密码" class="fl loginPwd" />
+								</p>
+								<!-- <p class="pr"><input name="validateCode"  id="validateCode" type="text" placeholder="验证码" class="fl validateCode" /><span class="fr validateImg"><img src="styleResource/img/homeImg/imgs/validateImg.png" class="fl"/></span></p> -->
+								<p class="pr">
+									<input name="validateCode" id="input" placeholder="验证码" type="text" class="fl validateCode" style="width: 95px" /><input type="text" class="fl validateCode" style="background-repeat: no-repeat; background-image: url(./styleResource/img/homeImg/imgs/checkcode-bg.png); font-size: 22px; font-weight: bold; letter-spacing: 2px; cursor: pointer; width: 125px" id="code" onclick="thisCreateCode()" />
+								</p>
+								<label class="prompt-txt" id="checkMsg"></label>
+								<button type="button" class="fl loginBtn" onclick="loginzheng();">登 录</button>
+							</form>
+						</div>
+					</div></li>
+				<li class="login-link userCenter" style="display: none;"><a href="javascript:;" class="login-li-title"><p>
+							<i class="icons icon-login"></i><span>用户中心</span>
+						</p></a>
+					<div class="login-box">
+						<i class="login-box-arrow"></i>
+						<div class="info-box">
+							<div class="usercenter-info">
+								<p>
+									<i class="icons usericons1 fl"></i> <span id="showname" class="fl">用户名称：Aaron</span>
+								</p>
+								<p>
+									<i class="icons usericons2 fl"></i> <span id="showorg" class="fl">用户单位：国税局</span>
+								</p>
+								<p>
+									<i class="icons usericons3 fl"></i> <span id="showtime" class="fl">登陆时间：2017-03-30</span>
+								</p>
+							</div>
+							<button type="button" class="fl loginBtn">
+								<span class="fl" onclick="">系统管理</span><i class="icons usericons4 fl"></i>
+							</button>
+						</div>
+					</div></li>
+				<li><a href="javascript:;" class="login-li-title"><i class="icons icon-applyfor"></i><span>申请试用</span></a></li>
+				<li><a href="javascript:;" class="login-li-title"><i class="icons icon-contact"></i><span>联系我们</span></a></li>
+				<!--<li><a href="javascript:;"><i class="icons icon-exit"></i><span>退出</span></a></li>-->
+			</ul>
+		</div>
+	</div>
+	<!-- 从session中获取值 -->
+<input type="hidden" id="uname" />
+<input type="hidden" id="mygov" />
+<input type="hidden" id="myloginTime" />
+
+	<script type="text/javascript">
+	
+		document.onkeydown = function(event) {
+			e = event ? event : (window.event ? window.event : null);
+			if (e.keyCode == 13) {
+				//执行的方法 
+				loginzheng();
+			}
+		}
+		/* function keyLogin(e){
+		 var curKey = e.which; 
+		 if (curKey ==13)  //回车键的键值为13
+		 loginzheng();
+		 } */
+		function loginzheng() {
+			// 判断验证码
+			var label = document.getElementById("checkMsg");
+			if (!validate()) {
+				label.innerText = "验证码输入错误！";
+				return;
+			}
+			label.innerText = "登录中";
+			//add 判断用户登录错误的判断
+			var userName = $("#username").val();
+			var password = $("#password").val();
+			$.ajax({
+				url : '/sysUser/loginerror',
+				type : 'post',
+				data : {
+					'userName' : userName,
+					'password' : password
+				},
+				success : function(result) {
+
+					stepLogList = result.type;
+					//		alert(result.type)
+					$("#loginform").attr("action", "/login");
+					$("#loginform").submit();
+				}
+			})
+			//add 判断用户登录错误的判断
+
+			//return false;
+
+		}
+		 
+		 var uname = 'root'; 
+	    var mygov = '\u5434\u4E2D\u533A'; 
+	    var myloginTime = '16:51:23';
+	    $("#uname").val(uname);
+	    $("#mygov").val(mygov);
+	    $("#myloginTime").val(myloginTime);
+	</script>
+<script src="./newPageStyle/newlogin.js"></script>
+</div>
+	</div>
+
+<!-- 从session中获取值 -->
+<!-- <input type="hidden" id="uname"/>
+<input type="hidden" id="mygov"/>
+<input type="hidden" id="myloginTime"/> -->
+<!-- <script th:inline="javascript">
+    var uname = /*[[${session.userName}]]*/ ; 
+    var mygov = /*[[${session.userGovCname2}]]*/ ; 
+    var myloginTime = /*[[${session.myloginTime}]]*/ ; 
+    $("#uname").val(uname);
+    $("#mygov").val(mygov);
+    $("#myloginTime").val(myloginTime);
+</script> -->
+
+<div class="content-box">
+    <div class="fl leftMenu-box">
+    <div>
+	<ul class="left-menu-box">
+     <li><a href="./login.html"><i class="menuicons menuicons-left1"></i><span class="menuspan">首页</span></a></li>
+     <li><a href="./ronghedc.html"><i class="menuicons menuicons-left2"></i><span class="menuspan">共享交换</span></a></li>
+     <li><a href="javascript:;"><i class="menuicons menuicons-left3"></i><span class="menuspan">数据采集</span></a></li>
+     <li><a href="./rongherc.html"><i class="menuicons menuicons-left4"></i><span class="menuspan">资源目录</span></a></li>
+     <li><a href="javascript:;"><i class="menuicons menuicons-left5"></i><span class="menuspan">数据标准化</span></a></li>
+     <li><a href="./dataClean.html"><i class="menuicons menuicons-left6"></i><span class="menuspan">数据清洗</span></a></li>
+     <li><a href="./dataFuse/index.html"><i class="menuicons menuicons-left7"></i><span class="menuspan">数据融合</span></a></li>
+     <li><a href="javascript:;"><i class="menuicons menuicons-left8"></i><span class="menuspan">数据建模分析</span></a></li>
+     <li><a href="./serviceGovernance.html"><i class="menuicons menuicons-left9"></i><span class="menuspan">服务治理</span></a></li>
+     <li><a href="./dataProducts.html"><i class="menuicons menuicons-left10"></i><span class="menuspan">数据产品</span></a></li>
+	</ul>
+</div>
+    </div>
+    <div class="fr content-right-box pr">
+        <div class="content-main-box">
+            <div class="col-lg-12">
+            <div class="chart-title">
+                <div class="clearfix chart-title-left">
+                    <i class="fl"></i>
+                    <h2 class="fl">清洗流程</h2>
+                </div>
+            </div>
+                <div class="clearfix cleanProcess-box">
+                    <div class="fl color-green left-txt"><span>清洗预处理</span></div>
+                    <div class="fl circle-box cbox-green"><i class="dcIcons icon-datasource"></i></div>
+                    <div class="fl"><p class="f24 color-green mt35 ml30 mr30">数据源</p></div>
+                    <div class="fl"><i class="dcIcons dcicon-arrow-blue mt40 mr30"></i></div>
+                    <div class="fl circle-box cbox-green"><i class="dcIcons icon-dataclean"></i></div>
+                    <div class="fl ml30 mr30">
+                        <p class="f24 color-green">数据清洗</p>
+                        <ul class="color-green dataclean-ul">
+                            <li><i></i>去重复</li>
+                            <li><i></i>字符串操作</li>
+                            <li><i></i>过滤</li>
+                            <li><i></i>字符串替换</li>
+                            <li><i></i>关联关系</li>
+                            <li><i></i>字段映射</li>
+                        </ul>
+                    </div>
+                    <div class="fl"><i class="dcIcons dcicon-arrow-blue mt40 mr30"></i></div>
+                    <div class="fl circle-box cbox-green"><i class="dcIcons icon-settask"></i></div>
+                    <div class="fl"><p class="f24 color-green mt35 ml30 mr30">设定任务</p></div>
+                    <div class="fl"><i class="dcIcons dcicon-arrow-red  mt40 mr30"></i></div>
+                    <div class="fl circle-box cbox-red"><i class="dcIcons icon-performtask"></i></div>
+                    <div class="fl"><p class="f24 color-red mt35 ml30">执行任务</p></div>
+                    <div class="fr color-red right-txt"><span>执行清洗任务</span></div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="chart-title">
+                    <div class="fl chart-title-left">
+                        <i class="fl"></i>
+                        <h2 class="fl">清洗工具统计</h2>
+                    </div>
+                </div>
+                <div class="chart-box">
+                    <!-- 清洗工具统计图表 -->
+                    <div id="tools" style="width:630px;height: 280px;margin:10px 0px;"></div>
+                    <!--<img src="chart/dataclean1.jpg" width="630" height="270"/>-->
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="chart-title">
+                    <div class="fl chart-title-left">
+                        <i class="fl"></i>
+                        <h2 class="fl">任务执行情况</h2>
+                    </div>
+                   <!--  <a href="javascript:;" class="fr chart-title-right">
+                        <i class="icons2 add-icons-red fl"></i>
+                        <span class="fl">新增转换</span>
+                        <i class="icons2 bg-top"></i>
+                        <i class="icons2 bg-bottom"></i>
+                    </a> -->
+                </div>
+                <div class="chart-box">
+                    <!-- 任务执行情况图表 -->
+                    <!--<img src="chart/dataclean2.jpg" width="630" height="270"/>-->
+                    <div id="tasks" style="width:630px;height: 280px;margin:10px 0px;"></div>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="chart-title">
+                    <div class="fl chart-title-left">
+                        <i class="fl"></i>
+                        <h2 class="fl">最新任务</h2>
+                    </div>
+                    <div class="fr chart-title-more"><a href="javascript:;">更多&gt;&gt;</a></div>
+                </div>
+                <div class="">
+                    <table class="data-table">
+                        <thead>
+                        <tr>
+                            <th>任务描述</th>
+                            <th>部署节点</th>
+                            <th>服务状态</th>
+                            <th>最后一次运行时间</th>
+                            <th>运行模式</th>
+                            <th width="140">操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>数据清洗任务327</td>
+                            <td>172.168.36.3</td>
+                            <td style="color: #e91f63;">挂起</td>
+                            <td>2017-03-30 03：00：00</td>
+                            <td>自动</td>
+                            <td onmouseover="javascript:remind(1);" onmouseout="javascript:moveRemind(1);">
+                                <div id="remind1" style="margin-left: 140px; display: none;"><span style="position: absolute;color: red;">功能维护中，敬请期待。。。</span></div>
+                                <a href="javascript:;" class="operation-a" title="功能维护中，敬请期待。。。" style="cursor: default;">启动</a>
+                                <a href="javascript:;" class="operation-a" title="功能维护中，敬请期待。。。" style="cursor: default;">配置</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>数据清洗任务206</td>
+                            <td>172.168.36.22</td>
+                            <td style="color: #e91f63;">挂起</td>
+                            <td>2017-03-30 02：00：00</td>
+                            <td>自动</td>
+                            <td onmouseover="javascript:remind(2);" onmouseout="javascript:moveRemind(2);">
+                                <div id="remind2" style="margin-left: 140px; display: none;"><span style="position: absolute;color: red;">功能维护中，敬请期待。。。</span></div>
+                                <a href="javascript:;" class="operation-a" title="功能维护中，敬请期待。。。" style="cursor: default;">启动</a>
+                                <a href="javascript:;" class="operation-a" title="功能维护中，敬请期待。。。" style="cursor: default;">配置</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>数据清洗任务186</td>
+                            <td>172.168.36.35</td>
+                            <td style="color: #e91f63;">挂起</td>
+                            <td>2017-03-30 01：00：00</td>
+                            <td>自动</td>
+                            <td onmouseover="javascript:remind(3);" onmouseout="javascript:moveRemind(3);">
+                                <div id="remind3" style="margin-left: 140px; display: none;"><span style="position: absolute;color: red;">功能维护中，敬请期待。。。</span></div>
+                                <a href="javascript:;" class="operation-a" title="功能维护中，敬请期待。。。" style="cursor: default;">启动</a>
+                                <a href="javascript:;" class="operation-a" title="功能维护中，敬请期待。。。" style="cursor: default;">配置</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>数据清洗任务375</td>
+                            <td>172.168.36.8</td>
+                            <td style="color: #e91f63;">挂起</td>
+                            <td>2017-03-29 01：00：00</td>
+                            <td>自动</td>
+                            <td onmouseover="javascript:remind(4);" onmouseout="javascript:moveRemind(4);">
+                                <div id="remind4" style="margin-left: 140px; display: none;"><span style="position: absolute;color: red;">功能维护中，敬请期待。。。</span></div>
+                                <a href="javascript:;" class="operation-a" title="功能维护中，敬请期待。。。" style="cursor: default;">启动</a>
+                                <a href="javascript:;" class="operation-a" title="功能维护中，敬请期待。。。" style="cursor: default;">配置</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>数据清洗任务297</td>
+                            <td>172.168.36.12</td>
+                            <td style="color: #e91f63;">挂起</td>
+                            <td>2017-03-29 00：00：00</td>
+                            <td>自动</td>
+                            <td onmouseover="javascript:remind(5);" onmouseout="javascript:moveRemind(5);">
+                                <div id="remind5" style="margin-left: 140px; display: none;"><span style="position: absolute;color: red;">功能维护中，敬请期待。。。</span></div>
+                                <a href="javascript:;" class="operation-a" title="功能维护中，敬请期待。。。" style="cursor: default;">启动</a>
+                                <a href="javascript:;" class="operation-a" title="功能维护中，敬请期待。。。" style="cursor: default;">配置</a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <script src="/fusion/js/public.js"></script> -->
+<script src="./fusion/js/echarts.min.js"></script>
+<script src="./fusion/js/dataClear.js"></script>
+<script>
+	function remind(a){
+		$("#remind"+a).show();
+	}
+	
+	function moveRemind(b){
+		$("#remind"+b).hide();
+	}
+
+</script>
+<!-- <script>
+    $(function(){
+    	//用户中心
+        var username =  $("#uname").val();
+        var mygov2 =  $("#mygov").val();
+        var myloginTime2 =  $("#myloginTime").val();
+        console.info("username  "+ username);
+        
+        $("#showname").text("用户名称："+username);
+        $("#showorg").text("用户单位："+mygov2);
+        $("#showtime").text("登录时间："+myloginTime2);
+    });
+</script> -->
+</body>
+</html>

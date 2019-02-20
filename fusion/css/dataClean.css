@@ -1,0 +1,64 @@
+.dataClean-bg{background:url(../imgs/dataClean_bg.jpg) no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;}
+
+.dcIcons{display:inline-block;background:url(../imgs/dataCleanIcons.png) no-repeat;}
+.icon-datasource{width:32px;height:34px;background-position:20px 20px;}
+.icon-dataclean{width:49px;height:42px;background-position:-53px 15px;}
+.icon-settask{width:32px;height:37px;background-position:-130px 15px;}
+.icon-performtask{width:34px;height:40px;background-position:-205px 15px;}
+.dcicon-arrow-blue{width:26px;height:28px;background-position:0 -72px;}
+.dcicon-arrow-red{width:26px;height:28px;background-position:-41px -72px;}
+
+
+/*清洗流程*/
+.cleanProcess-box{margin:20px auto 30px;}
+.cleanProcess-box .left-txt,.cleanProcess-box .right-txt{width:80px;text-align:center;}
+.cleanProcess-box .left-txt span,.cleanProcess-box .right-txt span{display:block;width:20px;margin:0 auto;}
+.cleanProcess-box .right-txt span{line-height:17px;}
+.cleanProcess-box .circle-box{display:inline-block;width:80px;height:80px;margin-top:15px;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;}
+.cleanProcess-box .circle-box i{width:80px;height:80px;margin-top:-2px;margin-left:-2px;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+}
+.cleanProcess-box .cbox-green{border:2px solid #41e3bf;
+    -webkit-box-shadow: 0 0 15px 0 rgba(65,227,191,0.7);
+    -moz-box-shadow: 0 0 15px 0 rgba(65,227,191,0.7);
+    box-shadow: 0 0 15px 0 rgba(65,227,191,0.7);}
+.cleanProcess-box .cbox-green i{border:2px solid #41e3bf;
+    -webkit-box-shadow: 0 0 15px 0 rgba(65,227,191,0.7) inset;
+    -moz-box-shadow: 0 0 15px 0 rgba(65,227,191,0.7) inset;
+    box-shadow: 0 0 15px 0 rgba(65,227,191,0.7) inset;}
+.cleanProcess-box .cbox-red{border:2px solid #e91f63;
+    -webkit-box-shadow: 0 0 15px 0 rgba(233,31,99,0.7);
+    -moz-box-shadow: 0 0 15px 0 rgba(233,31,99,0.7);
+    box-shadow: 0 0 15px 0 rgba(233,31,99,0.7);  }
+.cleanProcess-box .cbox-red i{border:2px solid #e91f63;
+    -webkit-box-shadow: 0 0 15px 0 rgba(233,31,99,0.7) inset;
+    -moz-box-shadow: 0 0 15px 0 rgba(233,31,99,0.7) inset;
+    box-shadow: 0 0 15px 0 rgba(233,31,99,0.7) inset;}
+
+.cleanProcess-box .cbox-title{font-size:24px;}
+.cleanProcess-box .dataclean-ul{width:180px;margin-top:5px;}
+.cleanProcess-box .dataclean-ul li{width:90px;float:left;}
+.cleanProcess-box .dataclean-ul li i{display:inline-block;width:7px;height:7px;background:#41e3bf;margin:0 7px 0 0;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    -webkit-box-shadow: 0 0 15px 0 #259dd2;
+    -moz-box-shadow: 0 0 15px 0 #259dd2;
+    box-shadow: 0 0 15px 0 #259dd2;}
+
+.mt35{margin-top:35px;}
+.mt40{margin-top:40px;}
+.ml30{margin-left:30px;}
+.mr30{margin-right:34px;}
+.color-green{color: #ffffff}
+.color-red {color: #ffffff}
+.data-table{color: #ffffff}

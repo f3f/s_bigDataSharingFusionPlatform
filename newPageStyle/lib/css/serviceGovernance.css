@@ -1,0 +1,46 @@
+.serviceGovernance-bg{background:url(../imgs/serverGovernance_bg.jpg) no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;}
+.service-box {
+    margin: 20px auto 30px;
+}
+.service-box .fwBox {
+    width: 258px; height: 79px;padding: 15px; border: 1px solid red; margin-left: 95px; font-size: 0;
+}
+.fwBox .fwIcon {
+   display: inline-block;vertical-align: top;background:url(../imgs/fwIcon.png)  no-repeat;
+}
+.fwBox .fwInfo {
+    display: inline-block; margin-left: 40px; text-align: center; font-size: 16px;
+}
+.fwBox .fwInfo .title{
+    font-size: 18px;line-height: 18px;
+}
+.fwBox .fwInfo .num{
+    font-size: 24px;line-height: 24px;margin-top: 7px;
+}
+.service-box .fwBox:nth-child(1) {
+    border-color: #e91f63; color: #e91f63; margin-left: 33px;
+}
+.service-box .fwBox:nth-child(1) .fwIcon{
+    height:48px;width:56px;background-position:-53px 0;
+}
+.service-box .fwBox:nth-child(2) {
+    border-color: #ffeb3b; color: #ffeb3b;
+}
+.service-box .fwBox:nth-child(2) .fwIcon{
+    height:48px;width:56px;background-position:-165px 0;
+}
+.service-box .fwBox:nth-child(3) {
+    border-color: #41e3bf; color: #41e3bf;
+}
+.service-box .fwBox:nth-child(3) .fwIcon{
+    height:48px;width:56px;background-position:-109px 0;
+}
+.service-box .fwBox:nth-child(4) {
+    border-color: #259dd2; color: #259dd2;
+}
+.service-box .fwBox:nth-child(4) .fwIcon{
+    height:46px;width:53px;background-position:0 0;
+}
+.line2-txt{height:30px;line-height:30px;border-bottom:3px solid #41e3bf;margin:0 50px;}

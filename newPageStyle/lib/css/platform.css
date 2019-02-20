@@ -1,0 +1,17 @@
+/* 数据共享交互平台 */
+.platform-bg{background:url(../imgs/platform_bg.jpg) no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;}
+
+.mb40{margin-bottom: 40px;}
+.icons2-relevance{width:47px;height:12px;background-position: -2px -38px;margin: 0 20px;}
+.contentBox{width: 1490px;}
+.chart-content{margin-top: 15px;}
+.categories-box .chart-box,.categories-box .list-box{width: 1375px;margin: 0 auto}
+.chart-box .chart-box-left,.chart-box .chart-box-right{height:395px;}
+.list-content{height: 230px;width:100%;}
+.list-content-table{font-size: 18px;color: #ffffff;}
+.list-content-table>tbody>tr,.list-content-table>tbody>tr>td{height: 40px;line-height: 40px;}
+.list-content-table>tbody>tr>td{border-top:none;}
+.list-content-table>tbody>tr.active{color: #e91f63;}
+.table>tbody>tr.active>td{background: none}
